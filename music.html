@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>
@@ -6,329 +8,147 @@
     </title>
     <meta name="keywords" content=
     "lawrence wells,technical writing,prague,art,SIEM" />
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-
-    function roll(img_name, img_src)
-    {
-    document.images[img_name].src = img_src;
-    }
-
-    //-->
-    //]]>
-    </script>
-    <!--BEGIN Pop-up Images Script=========================================-->
-
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-
-    var pic = null
-    var popImg = null  // use this when referring to pop-up image
-    var picTitle = null
-    var imgCount = 0
-    var imgWinName = "popImg"
-
-    function openPopImg(picName, windowTitle, windowWidth, windowHeight){
-    closePopImg()
-    picTitle = windowTitle
-    imgWinName = "popImg" + imgCount++ //unique name for each pop-up window
-    popImg = window.open(picName, imgWinName,
-           "toolbar=no,scrollbars=no,resizable=no,width="
-           + (parseInt(windowWidth)+20)  + ",height="
-           + (parseInt(windowHeight)+15))
-    }
-    function closePopImg(){    // close pop-up window if it is open
-    if (navigator.appName != "Microsoft Internet Explorer"
-      || parseInt(navigator.appVersion) >=4) //do not close if early IE
-    if(popImg != null) if(!popImg.closed) popImg.close()
-    }
-    function setStatus(msg){
-    status = msg
-    return true
-    }
-    //-->
-    //]]>
-    </script>
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-    var priorPic = new Array()
-    var noPic = 0
-    var foundit = false
-
-    function openPopImg(picName,  windowTitle, windowWidth, windowHeight){
-    var i = 0
-    if(pic == picName && winOpen()){
-    popImg.focus()
-    }
-    else{
-    foundit = false
-    for(i=0; i<=noPic; i++){
-      if (priorPic[i] == picName)
-        foundit = true
-      }
-    pic = picName
-    closePopImg()
-    picTitle = windowTitle
-    imgWinName = "popImg" + imgCount++ //unique name for each pop-up window
-    if(!foundit){
-      priorPic[noPic++] = pic
-      }
-    popImg = openPopImgWin(imgWinName, windowWidth, windowHeight)
-    }
-    }
-    function openPopImgWin(imgWinName, windowWidth, windowHeight){
-    var winFeatures = "toolbar=no,scrollbars=no,resizable=no,width="
-    + windowWidth + ",height=" + windowHeight
-    return window.open("pimg.htm", imgWinName, winFeatures)
-    }
-    function winOpen(){
-    if(popImg != null){
-    if(popImg.closed != true) return true; else return false
-    }
-    else
-    return false
-    }
-    //-->
-
-    //]]>
-    </script>
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-    // Use this function to control placement of pop-up window
-    // in Netscape 4+ and Internet Explorer 4+
-    function openPopImgWin(imgWinName, windowWidth, windowHeight){
-    var leftX = 20  // distance of window's left side from left of screen
-    var topY = 20   // distance of window's top side from top of screen
-    var winFeatures = "toolbar=no,scrollbars=no,resizable=no,width="
-    + windowWidth + ",height=" + windowHeight
-    if (leftX>0){
-    winFeatures += ",screenX=" + leftX + ",left=" + leftX
-                + ",screenY=" + topY + ",top=" + topY
-    }
-    return window.open("pimg.htm", imgWinName, winFeatures)
-    }
-    //-->
-    //]]>
-    </script>
-    <!--END Pop-up Images Script==========================================-->
-    <!--Start Pop-up Windows===-->
-
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-
-    var popWin = null    // use this when referring to pop-up window
-    var winCount = 0
-    var winName = "popWin"
-    function openPopWin(winURL, winWidth, winHeight, winFeatures, winLeft, winTop){
-    var d_winLeft = 20  // default, pixels from screen left to window left
-    var d_winTop = 20   // default, pixels from screen top to window top
-    winName = "popWin" + winCount++ //unique name for each pop-up window
-    closePopWin()           // close any previously opened pop-up window
-    if (openPopWin.arguments.length >= 4)  // any additional features?
-     winFeatures = "," + winFeatures
-    else
-     winFeatures = ""
-    if (openPopWin.arguments.length == 6)  // location specified
-     winFeatures += getLocation(winWidth, winHeight, winLeft, winTop)
-    else
-     winFeatures += getLocation(winWidth, winHeight, d_winLeft, d_winTop)
-    popWin = window.open(winURL, winName, "width=" + winWidth
-            + ",height=" + winHeight + winFeatures)
-    }
-    function closePopWin(){    // close pop-up window if it is open
-    if (navigator.appName != "Microsoft Internet Explorer"
-       || parseInt(navigator.appVersion) >=4) //do not close if early IE
-     if(popWin != null) if(!popWin.closed) popWin.close()
-    }
-    function getLocation(winWidth, winHeight, winLeft, winTop){
-    return ""
-    }
-    //-->
-    //]]>
-    </script>
-    <script type="text/javascript">
-//<![CDATA[
-
-    <!--
-    function getLocation(winWidth, winHeight, winLeft, winTop){
-    var winLocation = ""
-    if (winLeft < 0)
-     winLeft = screen.width - winWidth + winLeft
-    if (winTop < 0)
-     winTop = screen.height - winHeight + winTop
-    if (winTop == "cen")
-     winTop = (screen.height - winHeight)/2 - 20
-    if (winLeft == "cen")
-     winLeft = (screen.width - winWidth)/2
-    if (winLeft>0 & winTop>0)
-     winLocation =  ",screenX=" + winLeft + ",left=" + winLeft
-                 + ",screenY=" + winTop + ",top=" + winTop
-    else
-     winLocation = ""
-    return winLocation
-    }
-    //-->
-    //]]>
-    </script><!---END Pop-Up Windows====-->
-
-    <style type="text/css" media="all">
+    <style type="text/css">
 /*<![CDATA[*/
-    body {  background: #000000 url(images/goya2.gif) no-repeat top;}
-    .line { position:absolute; right:0; top:5%; width:100%;font:24px/1.5 helvetica,arial,sans-serif; font-weight: bold; color:#333333; line-height: 1.2em; background: transparent url(images/trans.png); padding: 10px 0; text-align: center;}
-    .text { font:14px/1.5 helvetica,arial,sans-serif; font-weight: bold; color:#FFFFFF; line-height: 1.2em; background: transparent url(images/trans.png); padding: 10px ;}
-    a {
-    text-decoration: none;
-    }
-    a:link {color:#333333; text-decoration:none; background:transparent;}
-    a:active {color:#2b48fd; text-decoration:none; background:transparent;}
-    a:hover {color:#2b48fd; text-decoration:none;}
+    <!--
+    a { text-decoration: none; }
+    a:link, a:active { background: transparent; color: #333333; text-decoration: none; }
+    a:hover { color: #2b48fd; text-decoration: none; }
+    body { background: #000000 url(images/goya2.gif) no-repeat top; }
+    dd { line-height: 1.5em; margin-left: 0; margin-top: 0.35em; padding-left: 0; }
+    dl { margin-top: 0.35em; }
+    dt { margin-top: 1em; }
+    h1, h2, h3, h4, h5, h6 { font-family: helvetica,arial,sans-serif
+    color: #92fd34; letter-spacing: 0.1em; margin: 1.5em 0 0 0; padding: 0; text-indent: -0.75em; text-transform: uppercase; }
+    li { line-height: 1.5em; }
+    p { line-height: 1.7 em; margin-left: 0; margin-top: 0.7em; padding-left: 0; }
+    p.date { font-size: 1em; line-height: 1em; }
+    ul { margin-left: 1em; margin-top: 0.35em; padding-left: 0; }
+    .box { background: transparent url(images/trans2.png); color: #333333; font: 14px helvetica,arial,sans-serif; font-weight: bold; left: 100px; line-height: 1.5em; padding: 30px; padding-left: 60px; padding-top: 15px; position: absolute; right: 100px; text-align: left; top: 15%; width: 900; }
+    .line { background: transparent url(images/trans.png); color: #000000; font: 24px/1.5 helvetica,arial,sans-serif; font-weight: bold; line-height: 1.2em; padding: 10px 0; position: absolute; right: 0; text-align: center; top: 5%; width: 100%; }
+    .text { background: transparent url(images/trans.png); color: #333333; font: 14px/1.5 helvetica,arial,sans-serif; font-weight: bold; padding: 10px; }
+    .text2 { background: none; color: #92fd34; font: 14px/1.5 helvetica,arial,sans-serif; font-weight: bold; }
+    -->
     /*]]>*/
     </style>
   </head>
   <body text="#000000" link="#000000" alink="#000000" vlink="#000000">
-    <table border="0" cellspacing="0" cellpadding="0" height="100%" width=
-    "100%">
-      <tr>
-        <td height="" valign="top" align="center">
-          <div class="line">
-            <a href="index2.html">Lawrence Wells</a>  |   <a href="mailto:donkeykin@hotmail.com" title=
-            "contact">donkeykin@hotmail.com</a> | <a href="writing.html" title=
-            "design">technical writing</a> | <a href="art.html" title=
-            "artwork">art</a> | <a href="music.html" title="music"><font color="#2b48fd">music</font></a> | <a href=
-            "cv.html" title="cv">cv</a>
-            &nbsp &nbsp &nbsp &nbsp &nbsp<a href="https://www.linkedin.com/in/lawrence-wells-940967165/" title="linkedin"><img src="images/linked.png" height=28 width=28 valign="bottom" align="center"></a>
-            <a href="https://twitter.com/praguepainter" title="twitter"><img src="images/twitter.png" height=28 width=28 valign="bottom" align="center"></a>
-            <a href="https://www.instagram.com/lawrence.wells/" title="instagram"><img src="images/insta.png" height=28 width=28 valign="bottom" align="center"></a>
-            <a href="https://lwells.tumblr.com/" title="tumblr"><img src="images/tumblr.png" height=28 width=28 valign="bottom" align="center"></a>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td height="30">
-          <br />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table border="0" cellspacing="10" cellpadding="0&quot;">
-            <tr>
-              <td width="60%" valign="top" align="left">
-                <div class="text">
-                  My recent paintings from 2007-2008 are focused on the
-                  contrast between figural sculpture and architecture. These
-                  are &#8220;winter&#8221; paintings in their use of muted blue
-                  and brown, almost monochromatic, they evoke photography and a
-                  sense of faded time. I am interested in motifs of a degraded
-                  modernism, the echoes of an ideological past, when public art
-                  played a propagandistic role, when art had a social effect. I
-                  do not intend to idealize, but rather to evoke a mood of
-                  melancholy, the lost dreams of the past still resonating in
-                  forgotten monuments on small city squares. Many want to
-                  forget the past, but I think it can be said that history is,
-                  and the past is always alive in the present. The dreams of
-                  Europe before WWII haunt us still.<br />
-                  <br />
-                  Ve sv&#253;ch posledn&#237;ch obrazech z let 2007 &#8211;
-                  2008 se zam&#283;&#345;uji na kontrast mezi
-                  figur&#225;ln&#237;m socha&#345;stv&#237;m a architekturou.
-                  Naz&#253;v&#225;m je zimn&#237;mi obrazy pro jejich
-                  tlumen&#233; modr&#233; a hn&#283;d&#233; t&#243;ny,
-                  t&#233;m&#283;&#345; monochromatick&#233;, evokuj&#237;
-                  fotografii a pocit uplynul&#233;ho &#269;asu.
-                  Zaj&#237;maj&#237; m&#283; motivy degradovan&#233;ho
-                  modernismu, ozvuky ideov&#233; minulosti, kdy
-                  ve&#345;ejn&#233; um&#283;n&#237; &#353;&#237;&#345;ilo
-                  my&#353;lenky, kdy um&#283;n&#237; m&#283;lo
-                  spole&#269;ensk&#253; dopad. M&#253;m z&#225;m&#283;rem
-                  nen&#237; idealizovat, ale sp&#237;&#353;e navodit stav
-                  melancholie, v n&#283;m&#382; ztracen&#233; sny minulosti
-                  rezonuj&#237; v polozapomenut&#253;ch pomn&#237;c&#237;ch na
-                  mal&#253;ch n&#225;m&#283;st&#237;ch. Mnoz&#237;
-                  cht&#283;j&#237; na minulost zapomenout, ale j&#225; se
-                  domn&#237;v&#225;m, &#382;e historie a minulost jsou v
-                  p&#345;&#237;tomnosti st&#225;le &#382;iv&#233;. Sny Evropy z
-                  doby p&#345;ed druhou sv&#283;tovou v&#225;lkou se v n&#225;s
-                  st&#225;le oz&#253;vaj&#237;.<br />
-                  <br />
-                  see more of my work at <a href=
-                  "http://www.creativeurope.com/wells"><font color=
-                  "#2b48fd">creativeurope.com</font></a>
-                </div>
-              </td>
-              <td width="5%">
-                <br />
-                <br />
-              </td>
-              <td width="35%">
-                <table border="0" cellspacing="10" cellpadding="0&quot;"
-                background="images/trans.png">
-                  <tr>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art1.jpg', 'pod vysehrad', '550', '744')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art1small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art2.jpg', 'excavation tower', '550', '740')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art2small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art3.jpg', 'dejeuner', '600', '602')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art3small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art4.jpg', 'betlem', '500', '649')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art4small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art5.jpg', 'victory', '600', '523')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art5small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                    <td>
-                      <a href=
-                      "JAVASCRIPT:openPopImg('images/art6.jpg', '', '455', '550')"
-                      onmouseover="return setStatus('')" onmouseout=
-                      "return setStatus('')"><img src="images/art6small.jpg"
-                      border="0" alt="image" /></a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+    <div class="line">
+      <a href="index2.html">Lawrence Wells</a>  |   <a href="mailto:donkeykin@hotmail.com" title=
+      "contact">donkeykin@hotmail.com</a> | <a href="writing.html" title="technical writing">technical writer</a> | <a href="art.html" title="artwork">art</a> | <a href="music.html" title="music"><font color="#2b48fd">music</font></a> |
+      <a href="cv.html" title="cv">cv</a>
+      &nbsp &nbsp &nbsp &nbsp &nbsp<a href="https://www.linkedin.com/in/lawrence-wells-940967165/" title="linkedin"><img src="images/linked.png" height=28 width=28 valign="bottom" align="center"></a>
+      <a href="https://twitter.com/praguepainter" title="twitter"><img src="images/twitter.png" height=28 width=28 valign="bottom" align="center"></a>
+      <a href="https://www.instagram.com/lawrence.wells/" title="instagram"><img src="images/insta.png" height=28 width=28 valign="bottom" align="center"></a>
+      <a href="https://lwells.tumblr.com/" title="tumblr"><img src="images/tumblr.png" height=28 width=28 valign="bottom" align="center"></a>
+    </div>
+    <div class="box">
+      <h1>
+        Lawrence Wells
+      </h1><br />
+    <p>
+        <a href="mailto:donkeykin@hotmail.com"><font color=
+        "#2b48fd">donkeykin@hotmail.com</font></a>
+      </p>
+      <h3>
+        <u>Accomplishments</u>
+      </h3><br />
+      <dl>
+        <dt>
+          I have worked for the last year as a technical writer in the area of information security.
+          As an external employee of a major pharmaceutical company, I am working on documentation in an SIEM division overseeing a migration to a new threat detection system using Splunk Enterprise Security.
+          Current documentation tasks include an onboarding handbook, as well as an OH,URS and FS/DS for the SIEM solution.
+        <p>I also have nine years editorial and translation experience in the area of print and online communication.
+          <p>Beginning in 2001 I also taught English as a second language at the Academy of Sciences in Prague, Czech Republic.
+            <p>I am also an accomplished studio artist exhibiting both locally and internationally. My art monograph Bohemian was published by Yoknapatawpha Press in 2015. I had work in a group show in New York in 2012 and am represented by a gallery in Palm Springs, CA.
+        </dt>
+      </dl>
+      <h3>
+        <u>PROFESSIONAL EXPERIENCE</u>
+      </h3>
+      <dl>
+        <dd>
+          <h4>
+            Technical Writer
+          </h4>Extelligence/HCL/Novartis, Prague, Czech Republic &#128310; 2019 &ndash; present
+        </dd>
+        <dd>
+          Writing support documentation in a Splunk environment at HCL Technologies for a leading multinational pharmaceutical company. Also responsible for other internal documentation for a current migration in the ISRM division.
+        </dd>
+        <dd>
+          <h4>
+            Freelance Copy Editor / Translator
+          </h4>various clients, Prague, Czech Republic &#128310; 2010 &ndash; 2019
+        </dd>
+        <dd>
+          Working primarily for the Czech publisher Arbor vitae, together with my wife, I translated over twenty monographs and proofread and copy edited many more. I also translated documents for corporate and academic clients including the print journal, Umění. I also worked as a technical editor for many departments at the Academy of Sciences and Czech Technical University ČVUT in Prague.
+        </dd>        <dd>
+                  <h4>
+                    English Teacher
+                  </h4>Akademie Věd, Prague, Czech Republic &#128310; 2001 &ndash; 2018
+                </dd>
+                <dd>
+                  I taught English as a second language at the Academy of Science, Charles University and for various corporate clients. I used Moodle for over 5 years for updating the curriculum and communicating with students.
+                </dd>
+                        <dd>
+          <h4>
+            Art Teacher
+          </h4>KC Meandr, Prague, Czech Republic &#128310; 2006 &ndash; 2007
+        </dd>
+        <dd>
+          I helped organize and oversee an international arts camp for young adults from various EU member states.  I taught a watercolour course as well as acting as an interpreter in Czech and English.
+        </dd>
+        <dd>
+          <h4>
+            Freelance Writer
+          </h4>remote work, Tourcaster, Los Angeles, California &#128310; 2003 &ndash; 2004
+        </dd>
+        <dd>
+          I wrote and recorded a series of four audio tour podcasts on Prague and the Czech Republic for this international travel website based in California.
+        </dd>
+        <dd>
+          <h4>
+            Web Developer
+          </h4>various clients, New York, New York &#128310; 1999 &ndash; 2001
+        </dd>
+        <dd>
+          I worked as a web designer designing and implementing content updates in an ASP environment. Clients included Harper Collins, TV Guide, The Shooting Gallery, Bates Worldwide Advertising, Icon 20 and McGraw-Hill.
+        </dd>
+      </dl>
+      <h3>
+        <u>EDUCATION</u>
+      </h3>
+      <dl>
+        <dt>
+          University of Mississippi, Oxford, MS MFA in Painting &ndash; 1992
+        </dt>
+        <dt>
+          Indiana University, Bloomington, IN BFA in Painting &ndash; 1987
+        </dt>
+        <dt>
+          Languages: English &ndash; Native Speaker, Czech &ndash; Intermediate
+        </dt>
+        <dd>
+          <h4>
+            <u>Computer Languages and Software:</u>
+          </h4>
+        </dd>
+        <dt>
+          Win and Linux OS
+        </dt>
+        <dt>
+          Git, HTML/CSS, Microsoft Office, Photoshop, Visio, Sharepoint
+        </dt>
+        <dt>
+          Basic Skills:
+        </dt>
+        <dt>
+          Python, Django, Flask
+        </dt>
+        <dt>
+          Javascript, ASP, MYSQL + PHP
+        </dt>
+      </dl>
+    </div>
   </body>
 </html>
